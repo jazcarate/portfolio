@@ -1,0 +1,186 @@
+<html>
+
+<head>
+    <link href="https://fonts.googleapis.com/css?family=Karla|Montserrat&display=swap" rel="stylesheet" />
+</head>
+
+<style>
+    body {
+        font-family: "Karla", sans-serif;
+        margin: 0px;
+        padding: 0px;
+        height: 100%;
+        overflow: hidden;
+        background-color: #393e46;
+    }
+
+    #main {
+        width: 100%;
+        height: calc(100vh - 30px);
+        background: linear-gradient(#20597d, #a3f7bf);
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        justify-content: center;
+        margin: -1px;
+    }
+
+    #logo {
+        font-family: "Montserrat", sans-serif;
+        color: #222831;
+        height: 100px;
+        position: absolute;
+        top: 30%;
+        margin-top: -50px;
+        text-align: center;
+        font-size: 55px;
+    }
+
+    #logo h1,
+    #logo h2 {
+        margin: 0;
+    }
+
+    #logo h2 {
+        font-style: italic;
+        color: #393e46;
+    }
+
+    .glitcheable {
+        position: relative;
+    }
+
+    .glitch {
+        position: absolute;
+        top: 0;
+        left: 0;
+        transition: 0.3s;
+        opacity: 0;
+        transition-property: opacity, margin;
+        white-space: nowrap;
+    }
+
+    .glitch.back {
+        margin: 0.05em 0 0 -0.05em;
+        color: tomato;
+        mix-blend-mode: color-burn;
+    }
+
+    .glitch.front {
+        margin: -0.05em 0 0 0.05em;
+        color: dodgerblue;
+        mix-blend-mode: darken;
+    }
+
+    .glitch.glitched {
+        opacity: 0.4;
+    }
+
+    #skyline {
+        width: 100%;
+        position: absolute;
+        left: 50%;
+        transform: translateX(-50%);
+        bottom: 0;
+        height: 50%;
+        background: url(toronto.svg) repeat-x;
+        background-position-y: bottom;
+    }
+
+    #navbar {
+        background: #222831;
+        color: #a3f7bf;
+        position: sticky;
+        top: 0;
+        height: 30px;
+        padding: 5px;
+    }
+</style>
+
+<body>
+    <div id="main">
+        <div id="skyline"></div>
+        <div id="logo">
+            <h1>I'm <strong>Joaquin</strong></h1>
+            <h2>
+                <span id="tagline" class="glitcheable">
+                    <span>Software Engineer</span>
+                    <span class="glitch front">Software Engineer</span>
+                    <span class="glitch back">Software Engineer</span>
+        </div>
+        </h2>
+    </div>
+    </div>
+    <nav id="navbar">
+        This is a work in progress.
+    </nav>
+</body>
+
+<script>
+    const GLITCH_DURATION = 200;
+    const glitches = document.getElementsByClassName("glitch");
+    const tagLine = document.getElementById("tagline");
+
+    // [ normal, upsidown (http://www.upsidedowntext.com/), Japanese (google translate + padding), greek (http://www.robertecker.com/hp/research/leet-converter.php?lang=en)]
+    const lines = [ [ 'Software Engineer', 'Soɟʇʍɐɹǝ Ǝuƃᴉuǝǝɹ', 'ソフトウェアエン ジニアをっん聞高', 'sοƒτωαяε εηgιηεεя']
+                  , [ 'Magic Judge', 'Wɐƃᴉɔ ſnpƃǝ', '魔法の裁判 王ぴー。官', 'мαgις jμδgε' ]
+                  , [ 'Fullstack Botcher', 'Ⅎnllsʇɐɔʞ qoʇɔɥǝɹ', 'フルスタックボッチ ざ属自どげャー', 'ƒμℓℓsταςκ βοτςнεя' ]
+                  , [ 'FP Aficionado', 'ℲԀ ∀ɟᴉɔᴉouɐpo', 'FP アマア苦住ヘノミヨ秀', 'ƒρ αƒιςιοηαδο' ]
+                  ];
+    let linei = 0;
+
+    function nextTag(){
+        linei = (linei+1) % lines.length
+        return lines[linei][0];
+    }
+
+    function changeTag(newTag) {
+        for (const child of tagline.children) {
+            child.textContent = newTag;
+        }
+    }
+
+    function toggleGlitch() {
+        for (const glitch of glitches) {
+            glitch.classList.toggle("glitched");
+        }
+    }
+
+    function glitchTag() {
+        let og = lines[linei][0];
+        const txt = Array.from( og );
+
+
+        const glitchType = ~~(Math.random() * (lines[0].length-1) + 1) ;
+        for ( let i = 0; i < 6; ++i ) {
+			const ind =  ~~(Math.random() * og.length);
+			txt[ ind ] = lines[linei][glitchType][ind];
+        }
+        return txt.join("");
+    }
+
+    function glitch() {
+        return new Promise(function (resolve) {
+
+            const prevTag =  document.getElementById("tagline").children[0].textContent;
+            toggleGlitch();
+            changeTag(glitchTag());
+
+            setTimeout(function () {
+                toggleGlitch();                
+                changeTag(prevTag);
+                resolve();
+            }, GLITCH_DURATION);
+        });
+    }
+
+    setInterval(function () {
+        changeTag(nextTag());
+    }, 30000);
+
+    setInterval(function () {
+        glitch();
+    }, 2000 + Math.random() * 100);
+</script>
+
+</html>
