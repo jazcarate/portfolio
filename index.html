@@ -2,194 +2,91 @@
 <html lang="en">
 
 <head>
-  <meta charset="utf-8" />
-  <link rel="icon" href="https://florius.com.ar/favicon.ico" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="theme-color" content="#20597d" />
-  <meta name="description" content="Home page of Joaquin Azcarate" />
-  <meta name="keywords" content="florius, portfolio, whoami">
-  <meta name="author" content="Florius">
-  <link href="https://fonts.googleapis.com/css?family=Karla|Montserrat&display=swap" rel="stylesheet" />
-  <title>Florius.com.ar</title>
+    <meta charset="utf-8" />
+    <link rel="icon" href="https://florius.com.ar/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#20597d" />
+    <meta name="description" content="Home page of Joaquin Azcarate" />
+    <meta name="keywords" content="florius, portfolio, whoami">
+    <meta name="author" content="Florius">
+    <link href="https://fonts.googleapis.com/css?family=Karla|Montserrat&display=swap" rel="stylesheet" />
+    <link href="style.css" rel="stylesheet" />
+    <title>Florius.com.ar</title>
 </head>
 
-<style>
-    body {
-        font-family: "Karla", sans-serif;
-        margin: 0px;
-        padding: 0px;
-        height: 100%;
-        overflow: hidden;
-        background-color: #393e46;
-    }
-
-    #main {
-        width: 100%;
-        height: calc(100vh - 30px);
-        background: linear-gradient(#20597d, #a3f7bf);
-        overflow: hidden;
-        position: relative;
-        display: flex;
-        justify-content: center;
-        margin: -1px;
-    }
-
-    #logo {
-        font-family: "Montserrat", sans-serif;
-        color: #222831;
-        height: 100px;
-        position: absolute;
-        top: 30%;
-        margin-top: -50px;
-        text-align: center;
-        font-size: 55px;
-    }
-
-    #logo h1,
-    #logo h2 {
-        margin: 0;
-    }
-
-    #logo h2 {
-        font-style: italic;
-        color: #393e46;
-    }
-
-    .glitcheable {
-        position: relative;
-    }
-
-    .glitch {
-        position: absolute;
-        top: 0;
-        left: 0;
-        transition: 0.3s;
-        opacity: 0;
-        transition-property: opacity, margin;
-        white-space: nowrap;
-    }
-
-    .glitch.back {
-        margin: 0.05em 0 0 -0.05em;
-        color: tomato;
-        mix-blend-mode: color-burn;
-    }
-
-    .glitch.front {
-        margin: -0.05em 0 0 0.05em;
-        color: dodgerblue;
-        mix-blend-mode: darken;
-    }
-
-    .glitch.glitched {
-        opacity: 0.4;
-    }
-
-    #skyline {
-        width: 100%;
-        position: absolute;
-        left: 50%;
-        transform: translateX(-50%);
-        bottom: 0;
-        height: 50%;
-        background: url(toronto.svg) repeat-x;
-        background-position-y: bottom;
-    }
-
-    #navbar {
-        background: #222831;
-        color: #a3f7bf;
-        position: sticky;
-        top: 0;
-        height: 30px;
-        padding: 5px;
-    }
-</style>
 
 <body>
-    <div id="main">
-        <div id="skyline"></div>
-        <div id="logo">
-            <h1>I'm <strong>Joaquin</strong></h1>
-            <h2>
-                <span id="tagline" class="glitcheable">
-                    <span>Software Engineer</span>
-                    <span class="glitch front">Software Engineer</span>
-                    <span class="glitch back">Software Engineer</span>
-        </div>
-        </h2>
-    </div>
-    </div>
-    <nav id="navbar">
-        This is a work in progress.
-    </nav>
+    <header>
+        <h1>I'm <span class="highlight">Joaquin Azcarate</span></h1>
+        <h2>And I'm a human</h2>
+
+        <section id="connect">
+            <ul>
+                <li>
+                    <a href="https://github.com/jazcarate" target="_blank" title="GitHub">
+                        <img src="https://simpleicons.org/icons/github.svg">
+                        GitHub
+                    </a>
+                </li>
+                <li>
+                    <a href="https://gitlab.com/jazcarate" target="_blank" title="GitLab">
+                        <img src="https://simpleicons.org/icons/gitlab.svg">
+                        GitLab
+                    </a>
+                </li>
+                <li>
+
+                    <a href="https://www.linkedin.com/in/joaquin-azcarate/" target="_blank" title="linkedIn">
+                        <img src="https://simpleicons.org/icons/linkedin.svg">
+                        LinkedIn
+                    </a>
+                </li>
+
+            </ul>
+        </section>
+    </header>
+
+    <section id="portfolio">
+        <h1>Portfolio</h1>
+
+        <dl>
+            <dt>Timers</dt>
+            <dd>
+                <figure class="left">
+                    <a href="http://timers.florius.com.ar/">
+                        <img src="img/timers.png" alt="Timers screenshot" />
+                    </a>
+                    <figcaption>Project 1. Timers</figcaption>
+                </figure>
+
+                <p>
+                    In a Magic: the Gathering tournament we usually need to show a big round timer. Each round is 50
+                    minutes long, and we occasionally need to show multiple clocks (for other events in the same venue).
+                    For this, we need an app that has:
+                </p>
+
+                <ul class="tag-cloud">
+                    <li class="tag-cloud-language">node</li>
+                    <li class="tag-cloud-language">TypeScript</li>
+                    <li class="tag-cloud-framework">React</li>
+                    <li class="tag-cloud-technology">Service Worker</li>
+                    <li class="tag-cloud-technology"><abbr title="Single Page Application">SPA</abbr></li>
+                    <li class="tag-cloud-technology"><abbr title="Progressive Web App">PWA</abbr></li>
+                    <li class="tag-cloud-infrastructure"><abbr title="GitLab Continuous Integration">GitLab CI</abbr>
+                    </li>
+                </ul>
+
+                <dl>
+                    <dt>Source code</dt>
+                    <dd><a href="https://gitlab.com/jazcarate/timer" title="GitLab::jazcarate/timer">GitLab</a></dd>
+                </dl>
+            </dd>
+        </dl>
+    </section>
+
+    <footer>
+        Footer
+    </footer>
 </body>
-
-<script>
-    const GLITCH_DURATION = 200;
-    const glitches = document.getElementsByClassName("glitch");
-    const tagLine = document.getElementById("tagline");
-
-    // [ normal, upsidown (http://www.upsidedowntext.com/), Japanese (google translate + padding), greek (http://www.robertecker.com/hp/research/leet-converter.php?lang=en)]
-    const lines = [ [ 'Software Engineer', 'Soɟʇʍɐɹǝ Ǝuƃᴉuǝǝɹ', 'ソフトウェアエン ジニアをっん聞高', 'sοƒτωαяε εηgιηεεя']
-                  , [ 'Magic Judge', 'Wɐƃᴉɔ ſnpƃǝ', '魔法の裁判 王ぴー。官', 'мαgις jμδgε' ]
-                  , [ 'Fullstack Botcher', 'Ⅎnllsʇɐɔʞ qoʇɔɥǝɹ', 'フルスタックボッチ ざ属自どげャー', 'ƒμℓℓsταςκ βοτςнεя' ]
-                  , [ 'FP Aficionado', 'ℲԀ ∀ɟᴉɔᴉouɐpo', 'FP アマア苦住ヘノミヨ秀', 'ƒρ αƒιςιοηαδο' ]
-                  ];
-    let linei = 0;
-
-    function nextTag(){
-        linei = (linei+1) % lines.length
-        return lines[linei][0];
-    }
-
-    function changeTag(newTag) {
-        for (const child of tagline.children) {
-            child.textContent = newTag;
-        }
-    }
-
-    function toggleGlitch() {
-        for (const glitch of glitches) {
-            glitch.classList.toggle("glitched");
-        }
-    }
-
-    function glitchTag() {
-        let og = lines[linei][0];
-        const txt = Array.from( og );
-
-
-        const glitchType = ~~(Math.random() * (lines[0].length-1) + 1) ;
-        for ( let i = 0; i < 6; ++i ) {
-			const ind =  ~~(Math.random() * og.length);
-			txt[ ind ] = lines[linei][glitchType][ind];
-        }
-        return txt.join("");
-    }
-
-    function glitch() {
-        return new Promise(function (resolve) {
-
-            const prevTag =  document.getElementById("tagline").children[0].textContent;
-            toggleGlitch();
-            changeTag(glitchTag());
-
-            setTimeout(function () {
-                toggleGlitch();                
-                changeTag(prevTag);
-                resolve();
-            }, GLITCH_DURATION);
-        });
-    }
-
-    setInterval(function () {
-        changeTag(nextTag());
-    }, 30000);
-
-    setInterval(function () {
-        glitch();
-    }, 2000 + Math.random() * 100);
-</script>
 
 </html>
