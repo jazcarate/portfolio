@@ -3,12 +3,12 @@ stages:
 
 pages:
   stage: deploy
+  image: node:12
   script:
-    - mkdir public
-    - find . -not -path '*/\.*' -type f -exec mv '{}' public/ \;
-    - cp public/index.html public/404.html
+    - npm install --progress=false
+    - npm run build
   artifacts:
     paths:
-      - public
+      - dist
   only:
     - master

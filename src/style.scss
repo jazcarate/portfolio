@@ -14,16 +14,21 @@ body {
     padding: 0 10px;
 }
 
-h1, h2, h3 {
+h1,
+h2,
+h3 {
     line-height: 1.2;
     font-family: "Montserrat", sans-serif;
 }
 
-#portfolio figure img {
-    clip-path: circle(50% at center);
-    height: 3em;
-}
-
-#portfolio figure figcaption {
-    display: none;
+#portfolio {
+    figure {
+        img {
+            clip-path: circle(50% at center);
+            height: 3em;
+        }
+        figcaption {
+            display: none;
+        }
+    }
 }
