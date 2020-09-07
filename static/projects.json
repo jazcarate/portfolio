@@ -220,7 +220,7 @@
     {
         "name": "delCanioBot",
         "url": "https://twitter.com/DelCanioBot",
-        "description": "An amusing bot that creates images based on a recurring joke of a Argentinian politician.",
+        "description": "An amusing bot that creates images based on a trap song of an Argentinian politician.",
         "challenges": [
             "Create a image transformation type that is a Monoid",
             "Posting to Twitter API via conduit"

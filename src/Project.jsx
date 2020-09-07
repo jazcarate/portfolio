@@ -59,7 +59,6 @@ const InlineLi = styled.li`
 
 const Link = styled.a`
     color: inherit;
-    text-decoration: inherit;
 `;
 
 const Project = ({ name, url, source, description, tags, challenges }) => {

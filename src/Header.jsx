@@ -22,11 +22,11 @@ const Connection = styled.li`
 const Wrapper = styled.header`
     @media (min-width: 425px) { 
         margin-top: 10vh;
-        height: 80vh;
+        height: 85vh;
     }
     
     @media (max-width: 425px) { 
-        margin-bottom: 2em;
+        height: 40vh;
     }
 `;
 
@@ -34,7 +34,7 @@ const Header = () => {
     return (
         <Wrapper>
             <h1>I'm <Highlight>Joaquin Azcarate</Highlight></h1>
-            <h2>A software engineer</h2>
+            <h2>Software engineer.</h2>
 
             <section id="connect">
                 <Connections>
