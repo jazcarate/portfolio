@@ -1,30 +1,35 @@
 import React from "react";
+import styled from 'styled-components';
 
-const divStyle = {
-    color: 'blue',
-};
+const Title = styled.h1`
+  color: palevioletred;
+`;
+
+const SocialIcon = styled.img`
+    height: 1em;
+`
 
 const Header = () => {
     return (
         <header>
-            <h1 style={divStyle}>I'm <span class="highlight">Joaquin Azcarate</span></h1>
+            <Title>I'm Joaquin Azcarate</Title>
             <h2>And I'm a human</h2>
 
             <section id="connect">
                 <ul>
                     <li>
                         <a href="https://github.com/jazcarate" target="_blank" title="GitHub">
-                            <img src="https://simpleicons.org/icons/github.svg" /> GitHub
+                            <SocialIcon src="https://simpleicons.org/icons/github.svg" /> GitHub
                             </a>
                     </li>
                     <li>
                         <a href="https://gitlab.com/jazcarate" target="_blank" title="GitLab">
-                            <img src="https://simpleicons.org/icons/gitlab.svg" /> GitLab
+                            <SocialIcon src="https://simpleicons.org/icons/gitlab.svg" /> GitLab
                             </a>
                     </li>
                     <li>
                         <a href="https://www.linkedin.com/in/joaquin-azcarate/" target="_blank" title="linkedIn">
-                            <img src="https://simpleicons.org/icons/linkedin.svg" /> LinkedIn
+                            <SocialIcon src="https://simpleicons.org/icons/linkedin.svg" /> LinkedIn
                             </a>
                     </li>
 

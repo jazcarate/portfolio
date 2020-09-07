@@ -1,11 +1,6 @@
 body {
     font-family: "Karla", sans-serif;
     background-color: #f5f5f5;
-    margin: 0;
-    padding: 0;
-}
-
-body {
     margin: 40px auto;
     max-width: 650px;
     line-height: 1.6;
@@ -19,16 +14,4 @@ h2,
 h3 {
     line-height: 1.2;
     font-family: "Montserrat", sans-serif;
-}
-
-#portfolio {
-    figure {
-        img {
-            clip-path: circle(50% at center);
-            height: 3em;
-        }
-        figcaption {
-            display: none;
-        }
-    }
 }

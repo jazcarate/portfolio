@@ -387,5 +387,39 @@
                 "type": "framework"
             }
         ]
+    },
+    {
+        "name": "This portfolio",
+        "url": "https://florius.com.ar/",
+        "description": "this",
+        "challenges": [
+            "Server side rendering React and hydration.",
+            "Making it easy to add new projects.",
+            "Making it somewhat pretty."
+        ],
+        "source": "https://gitlab.com/jazcarate/portfolio",
+        "tags": [
+            {
+                "name": "JavaScript",
+                "type": "language"
+            },
+            {
+                "name": "React",
+                "type": "framework"
+            },
+            {
+                "name": "Parcel",
+                "type": "framework"
+            },
+            {
+                "name": "SSR",
+                "definition": "Server Side Rendering",
+                "type": "technology"
+            },
+            {
+                "name": "HTML 5 compliant",
+                "type": "technology"
+            }
+        ]
     }
 ]
