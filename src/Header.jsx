@@ -1,41 +1,62 @@
 import React from "react";
 import styled from 'styled-components';
 
-const Title = styled.h1`
+const Highlight = styled.span`
   color: palevioletred;
 `;
 
 const SocialIcon = styled.img`
-    height: 1em;
+    height: 1.3em;
 `
+
+const Connections = styled.ul`
+    list-style: none;
+    padding: 0;
+`;
+
+const Connection = styled.li`
+    margin: 0 8px;
+    display: inline;
+`;
+
+const Wrapper = styled.header`
+    @media (min-width: 425px) { 
+        margin-top: 10vh;
+        height: 80vh;
+    }
+    
+    @media (max-width: 425px) { 
+        margin-bottom: 2em;
+    }
+`;
 
 const Header = () => {
     return (
-        <header>
-            <Title>I'm Joaquin Azcarate</Title>
-            <h2>And I'm a human</h2>
+        <Wrapper>
+            <h1>I'm <Highlight>Joaquin Azcarate</Highlight></h1>
+            <h2>A software engineer</h2>
 
             <section id="connect">
-                <ul>
-                    <li>
+                <Connections>
+                    <Connection>
                         <a href="https://github.com/jazcarate" target="_blank" title="GitHub">
-                            <SocialIcon src="https://simpleicons.org/icons/github.svg" /> GitHub
-                            </a>
-                    </li>
-                    <li>
+                            <SocialIcon src="https://simpleicons.org/icons/github.svg" />
+                        </a>
+                    </Connection>
+                    <Connection>
                         <a href="https://gitlab.com/jazcarate" target="_blank" title="GitLab">
-                            <SocialIcon src="https://simpleicons.org/icons/gitlab.svg" /> GitLab
-                            </a>
-                    </li>
-                    <li>
+                            <SocialIcon src="https://simpleicons.org/icons/gitlab.svg" />
+                        </a>
+                    </Connection>
+                    <Connection>
                         <a href="https://www.linkedin.com/in/joaquin-azcarate/" target="_blank" title="linkedIn">
-                            <SocialIcon src="https://simpleicons.org/icons/linkedin.svg" /> LinkedIn
-                            </a>
-                    </li>
+                            <SocialIcon src="https://simpleicons.org/icons/linkedin.svg" />
+                        </a>
+                    </Connection>
 
-                </ul>
+                </Connections>
             </section>
-        </header>
+        </Wrapper>
     );
 };
 

@@ -2,7 +2,6 @@
     {
         "name": "Timers",
         "url": "http://timers.florius.com.ar/",
-        "image": "./img/timers.png",
         "description": "A minimalist timer app, with a few key features necessary for TCG tournaments.",
         "challenges": [
             "Keeping a UI simple, language-independent but highly usable.",
@@ -77,7 +76,6 @@
     {
         "name": "password.cat",
         "url": "https://password.cat/",
-        "image": "./img/password.cat.png",
         "description": "A whimsical app to generate passwords via a cat-keyboard-input entropy generation.",
         "challenges": [
             "Make it look appealing.",
@@ -99,7 +97,6 @@
     {
         "name": "Marble-OS",
         "url": "https://jazcarate.github.io/marble-os/",
-        "image": "https://asciinema.org/a/ffFLLTRD5ozZj0zqgDzS7rA7D.svg",
         "description": "A CLI to run distributed programs in sync, used mainly as an academic tool for testing.",
         "challenges": [
             "Providing a rich CLI usage and help menu.",
@@ -252,7 +249,6 @@
     },
     {
         "name": "riprisintin (/iify)",
-        "image": "./img/khaleesi.jpg",
         "url": "https://riprisintin.herokuapp.com",
         "description": "A satirical slack slash command to generate images based on the Mocking Khaleesi meme.",
         "challenges": [
@@ -370,7 +366,6 @@
     },
     {
         "name": "okGnome",
-        "image": "./img/okGnome.png",
         "description": "A cheerful, native app to display gnomes as tinder matches.",
         "challenges": [
             "React Native's ecosystem",
@@ -417,7 +412,7 @@
                 "type": "technology"
             },
             {
-                "name": "HTML 5 compliant",
+                "name": "HTML 5.1",
                 "type": "technology"
             }
         ]
