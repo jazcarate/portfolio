@@ -2,18 +2,25 @@
   "name": "portfolio",
   "version": "1.0.0",
   "description": "My peronsla portfolio",
-  "main": "src/index.pug",
+  "main": "src/index.html",
   "dependencies": {},
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@babel/node": "^7.10.5",
+    "@babel/preset-env": "^7.11.5",
+    "@babel/preset-react": "^7.10.4",
     "parcel": "^1.12.4",
+    "parcel-bundler": "^1.12.4",
     "parcel-plugin-clean-dist": "0.0.6",
     "parcel-plugin-imagemin": "^4.0.1",
-    "pug": "^3.0.0",
+    "parcel-plugin-static-files-copy": "^2.5.0",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
     "sass": "^1.26.10"
   },
   "scripts": {
-    "build": "parcel build src/index.pug",
-    "dev": "parcel src/index.pug --open"
+    "build": "parcel build --no-cache src/build.js src/index.html && node ./render",
+    "dev": "parcel src/index.html --open"
   },
   "repository": {
     "type": "git",
