@@ -21,8 +21,8 @@
     "styled-components": "^5.2.0"
   },
   "scripts": {
-    "build": "cross-env NODE_ENV=production parcel build --no-cache src/build.js src/index.html && node ./render",
-    "dev": "parcel src/index.html --open"
+    "build": "cross-env NODE_ENV=production parcel build --no-cache --out-dir public src/build.js src/index.html && node ./render",
+    "dev": "parcel --out-dir public src/index.html --open"
   },
   "repository": {
     "type": "git",

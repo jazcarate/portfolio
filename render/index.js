@@ -1,7 +1,7 @@
-const build = require('../dist/build').default;
+const build = require('../public/build').default;
 const fs = require('fs').promises;
 
-const indexPath = __dirname + '/../dist/index.html';
+const indexPath = __dirname + '/../public/index.html';
 
 const [root, styles] = build();
 
