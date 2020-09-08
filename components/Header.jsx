@@ -12,6 +12,14 @@ const dropIn = keyframes`
 
 const SocialIcon = styled.img`
     height: 1.3em;
+    border-bottom: 3px solid transparent;
+    transition: border-color 300ms linear;
+    padding: 6px;
+    border-radius: 5px;
+
+    &:hover {
+        border-color: ${props => props.color}
+    }
     
     animation: ${dropIn} cubic-bezier(0, 0, 0.1, 1) 1 1s forwards;
     animation-delay: ${props => props.delay}ms;
@@ -49,20 +57,24 @@ const SubTitle = styled.p`
 const connections = [
     {
         url: "https://github.com/jazcarate",
-        "icon": "https://simpleicons.org/icons/github.svg",
-        "title": "GitHub"
+        icon: "https://simpleicons.org/icons/github.svg",
+        title: "GitHub",
+        color: "#181717"
     }, {
         url: "https://gitlab.com/jazcarate",
-        "icon": "https://simpleicons.org/icons/gitlab.svg",
-        "title": "GitLab"
+        icon: "https://simpleicons.org/icons/gitlab.svg",
+        title: "GitLab",
+        color: "#FCA121"
     }, {
         url: "https://www.linkedin.com/in/joaquin-azcarate/",
-        "icon": "https://simpleicons.org/icons/linkedin.svg",
-        "title": "linkedIn"
+        icon: "https://simpleicons.org/icons/linkedin.svg",
+        title: "linkedIn",
+        color: "#0077B5"
     }, {
         url: "mailto:j@florius.com.ar",
-        "icon": "https://simpleicons.org/icons/gmail.svg",
-        "title": "E-Mail"
+        icon: "https://simpleicons.org/icons/gmail.svg",
+        title: "E-Mail",
+        color: "#D14836"
     },
 ];
 
@@ -74,10 +86,10 @@ const Header = () => {
 
             <section id="connect">
                 <Connections>
-                    {connections.map(({ url, icon, title }, i) =>
+                    {connections.map(({ url, icon, title, color }, i) =>
                         <Connection key={`connection-${i}`}>
                             <a href={url} target="_blank" rel="noreferrer noopener" title={title}>
-                                <SocialIcon alt={title} src={icon} delay={100 + i * 130} />
+                                <SocialIcon alt={title} src={icon} delay={100 + i * 130} color={color} />
                             </a>
                         </Connection>)}
                 </Connections>
