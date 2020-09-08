@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import styled from 'styled-components';
 
 const TriangleBR = styled.div`
@@ -56,15 +56,25 @@ const MAX_WIDTH = 11;
 const MAX_HEIGHT = 4;
 
 const RandomFig = () => {
-    const color = randomChoice(possibleColors);
-    const Chosen = randomChoice(possibleShapes);
+    const [color, setColor] = useState(null);
+    const [Figure, setFigure] = useState(null);
+    const [positions, setPositions] = useState(null);
 
-    const [posX, sizeX, posY, sizeY] = [
-        randomRange(1, MAX_WIDTH), randomRange(4, MAX_WIDTH),
-        randomRange(1, MAX_HEIGHT), randomRange(1, MAX_HEIGHT)
-    ];
+    useEffect(() => {
+        setColor(randomChoice(possibleColors));
+        setFigure(randomChoice(possibleShapes));
 
-    return <Chosen color={color} posY={posY} posX={posX} sizeY={sizeY} sizeX={sizeX} />;
+        setPositions([
+            randomRange(1, MAX_WIDTH), randomRange(4, MAX_WIDTH),
+            randomRange(1, MAX_HEIGHT), randomRange(1, MAX_HEIGHT)
+        ]);
+    }, []);
+
+    if (color && Figure && positions) {
+        const [posX, sizeX, posY, sizeY] = positions;
+        return <Figure color={color} posY={posY} posX={posX} sizeY={sizeY} sizeX={sizeX} />
+    }
+    return <></>;
 };
 
 

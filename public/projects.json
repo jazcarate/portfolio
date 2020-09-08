@@ -403,12 +403,16 @@
                 "type": "framework"
             },
             {
-                "name": "Parcel",
+                "name": "Next.js",
                 "type": "framework"
             },
             {
-                "name": "SSR",
-                "definition": "Server Side Rendering",
+                "name": "Vercel",
+                "type": "technology"
+            },
+            {
+                "name": "SSG",
+                "definition": "Static Site Generation",
                 "type": "technology"
             },
             {

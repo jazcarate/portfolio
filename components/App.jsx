@@ -1,13 +1,12 @@
 import React from "react";
 import styled from 'styled-components';
 
-import "./style.scss";
 import Header from './Header';
 import Project from './Project';
 import Cards from './Cards';
 import Footer from './Footer';
 
-import projects from '../static/projects.json';
+import projects from '../public/projects.json';
 
 const Wrapper = styled.div`
     margin: 0 auto;

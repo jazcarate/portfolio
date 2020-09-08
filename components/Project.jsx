@@ -95,8 +95,8 @@ const Project = ({ name, url, source, description, tags, challenges }) => {
                         const WithDefinition = (props) => <ConditionalWrapper condition={definition} wrapper={children => <abbr title={definition}>{children}</abbr>} {...props} />
 
                         return <InlineLi key={`tag-${i}`} className={`tag-cloud-${type}`}>
-                            <WithDefinition>
-                                #{name}
+                            #<WithDefinition>
+                                {name}
                             </WithDefinition>
                         </InlineLi>
                     })}

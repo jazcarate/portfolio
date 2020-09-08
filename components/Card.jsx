@@ -1,11 +1,17 @@
-import React from "react";
-import styled from 'styled-components';
+import React, { useState, useEffect } from "react";
+import styled, { keyframes } from 'styled-components';
 
 import RandomFig from './RandomFig';
 import encode from './nameEncode';
 
+const popOut = keyframes`
+    0%   { opacity: 0; box-shadow: 0 0 0 rgba(0,0,0,0.25), 0 0 0 rgba(0,0,0,0.22); }
+    30%  { opacity: 1}
+    100% { opacity: 1; box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 3px rgba(0,0,0,0.22); }
+`;
+
 const CardStock = styled.a`
-    box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 3px rgba(0,0,0,0.22);
+    box-shadow: box-shadow: 0 0 0 rgba(0,0,0,0.25), 0 0 0 rgba(0,0,0,0.22);
     display: grid;
     height: 200px;
     margin: 10px 6px;
@@ -17,6 +23,9 @@ const CardStock = styled.a`
 
     grid-template-columns: repeat(12, 1fr);
     grid-template-rows: repeat(4, 1fr);
+
+    animation: ${popOut} cubic-bezier(0, 0, 0.1, 1) 1 1s forwards 300ms;
+    opacity: 0;
 `;
 
 const Info = styled.div`
@@ -49,24 +58,27 @@ const Footer = styled.ul`
     white-space: nowrap;
 
     list-style: none;
-    & ::after {
-        content: "·";
-    }
-    & :last-child::after {
-        content: "";
-    }
 `;
 
 const Tag = styled.li`
     display: inline-block;
+    &::after {
+        content: "·";
+    }
+    &:last-child::after {
+        content: "";
+    }
 `;
 
 const Card = ({ name, tags }) => {
-    const numberOfStuff = 1 + Math.floor(Math.random() * 3);
+    const [numFigures, setNumFigures] = useState(0);
+    useEffect(() => {
+        setNumFigures(1 + Math.floor(Math.random() * 3));
+    }, []);
 
     return (<>
         <CardStock href={`#${encode(name)}`}>
-            {[...Array(numberOfStuff).keys()].map(i => <RandomFig key={`figure-${name}-${i}`} />)}
+            {[...Array(numFigures).keys()].map(i => <RandomFig key={`figure-${name}-${i}`} />)}
             <Info>{name}</Info>
             <Footer>
                 {tags.map((t, i) => <Tag key={`cardtag-${name}-${i}`}>{t.name}</Tag>)}
