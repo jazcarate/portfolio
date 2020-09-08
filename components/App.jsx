@@ -46,12 +46,13 @@ const App = () => {
                 <Hr />
 
                 <section id="deck">
-                    <h1>My projects</h1>
+                    <h2>My projects</h2>
                     <Cards projects={projects} />
                 </section>
 
                 <Hr />
                 <section id="portfolio">
+                    <h2>Details</h2>
                     <dl>
                         {projects.map((p, i) => <Project {...p} key={`project-${i}`} />)}
                     </dl>

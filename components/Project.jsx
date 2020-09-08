@@ -13,7 +13,7 @@ const Caption = styled.figcaption`
     display: none;
 `;
 
-const Snaked = styled.dl`
+const Snaked = styled.div`
     border-top: 2px solid #ccc;
     margin:0;
     padding: 30px;
@@ -67,9 +67,9 @@ const Project = ({ name, url, source, description, tags, challenges }) => {
     return (<>
         <Snaked id={encode(name)}>
             <dt>
-                <h2>
+                <h3>
                     <WithLink>{name}</WithLink>
-                </h2>
+                </h3>
             </dt>
             <dd>
                 <p>{description}</p>

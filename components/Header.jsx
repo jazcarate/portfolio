@@ -40,6 +40,12 @@ const Wrapper = styled.header`
     }
 `;
 
+const SubTitle = styled.p`
+    font-size: 1.5em;
+    margin-top: 0.83em 0;
+    font-weight: bold;
+`;
+
 const connections = [
     {
         url: "https://github.com/jazcarate",
@@ -64,14 +70,14 @@ const Header = () => {
     return (
         <Wrapper>
             <h1>I'm <Highlight>Joaquin Azcarate</Highlight></h1>
-            <h2>Software engineer.</h2>
+            <SubTitle>Software engineer.</SubTitle>
 
             <section id="connect">
                 <Connections>
                     {connections.map(({ url, icon, title }, i) =>
                         <Connection key={`connection-${i}`}>
-                            <a href={url} target="_blank" title={title}>
-                                <SocialIcon src={icon} delay={100 + i * 130} />
+                            <a href={url} target="_blank" rel="noreferrer noopener" title={title}>
+                                <SocialIcon alt={title} src={icon} delay={100 + i * 130} />
                             </a>
                         </Connection>)}
                 </Connections>
