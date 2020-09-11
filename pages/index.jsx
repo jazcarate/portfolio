@@ -1,6 +1,8 @@
-import Head from 'next/head'
+import Head from 'next/head';
+import { jsonLdScriptProps } from "react-schemaorg";
 
 import App from '../components/App';
+import me from '../components/PersonSchema';
 
 
 const Index = () => {
@@ -35,6 +37,8 @@ const Index = () => {
         <meta property="og:image" content="https://florius.com.ar/summary.png" />
         <meta property="og:description" content="Joaquin Azcarate :: Personal Projects" />
         <meta property="og:site_name" content="Joaquin Azcarate :: Personal Projects" />
+
+        <script {...me} />
 
         <link href="https://fonts.googleapis.com/css?family=Karla|Montserrat&display=swap" rel="stylesheet" />
         <link rel="icon" href="/favicon.ico" />
