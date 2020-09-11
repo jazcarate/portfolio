@@ -12,6 +12,7 @@ const dropIn = keyframes`
 
 const SocialIcon = styled.img`
     height: 1.3em;
+    width: 1.3em;
     border-bottom: 3px solid transparent;
     transition: border-color 300ms linear;
     padding: 6px;
@@ -40,7 +41,7 @@ const Connection = styled.li`
 const Wrapper = styled.header`
     @media (min-width: 425px) { 
         margin-top: 10vh;
-        height: 85vh;
+        height: 84vh;
     }
     
     @media (max-width: 425px) { 

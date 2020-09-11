@@ -2,6 +2,7 @@ import React from "react";
 import styled from 'styled-components';
 
 import ConditionalWrapper from './ConditionalWrapper';
+import Link from './Link';
 import encode from './nameEncode';
 
 const Preview = styled.img`
@@ -55,10 +56,6 @@ const InlineLu = styled.ul`
 const InlineLi = styled.li`
     margin: 0 8px;
     display: inline-block;
-`;
-
-const Link = styled.a`
-    color: inherit;
 `;
 
 const Project = ({ name, url, source, description, tags, challenges }) => {

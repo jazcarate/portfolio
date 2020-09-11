@@ -24,6 +24,7 @@ const Hr = styled.hr`
     border-color: black;
     border-width: 1px 0 0 0;
     border-radius: 20px;
+    margin-top: 2em;
     width: 85%;
 
     &:before {
