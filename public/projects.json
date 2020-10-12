@@ -1,5 +1,98 @@
 [
     {
+        "name": "koncierge",
+        "url": "http://koncierge.florius.com.ar/",
+        "description": "A Kotlin library to define AB experiments given a context.",
+        "challenges": [
+            "Writing documentation both for the code, and for the koncierge JSON-like format.",
+            "Provide an interactive playground with multiple examples.",
+            "Offline available."
+        ],
+        "source": "https://github.com/jazcarate/koncierge",
+        "tags": [
+            {
+                "name": "Kotlin",
+                "type": "language"
+            },
+            {
+                "name": "Arrow",
+                "type": "framework"
+            },
+            {
+                "name": "Library",
+                "type": "technology"
+            },
+            {
+                "name": "A/B Testing",
+                "type": "technology"
+            },
+            {
+                "name": "Gradle",
+                "type": "technology"
+            }
+        ]
+    },
+    {
+        "name": "Marble-OS",
+        "url": "https://jazcarate.github.io/marble-os/",
+        "description": "A CLI to run distributed programs in sync, used mainly as an academic tool for testing.",
+        "challenges": [
+            "Providing a rich CLI usage and help menu.",
+            "Bootstrapping development environment with Nix",
+            "Parsing custom file format."
+        ],
+        "source": "https://github.com/jazcarate/marble-os#readme",
+        "tags": [
+            {
+                "name": "Haskell",
+                "type": "language"
+            },
+            {
+                "name": "Nix",
+                "type": "technology"
+            },
+            {
+                "name": "attoparsec",
+                "type": "framework"
+            },
+            {
+                "name": "transformers",
+                "definition": "functor and monad transformers",
+                "type": "framework"
+            },
+            {
+                "name": "microlens",
+                "type": "framework"
+            },
+            {
+                "name": "CLI",
+                "definition": "Command Line Interpreter",
+                "type": "technology"
+            }
+        ]
+    },
+    {
+        "name": "password.cat",
+        "url": "https://password.cat/",
+        "description": "A whimsical app to generate passwords via a cat-keyboard-input entropy generation.",
+        "challenges": [
+            "Make it look appealing.",
+            "Fully comply with RFC8615 and GDPR."
+        ],
+        "source": "https://gitlab.com/jazcarate/password.cat",
+        "tags": [
+            {
+                "name": "HTML",
+                "type": "language"
+            },
+            {
+                "name": "GitLab CI",
+                "definition": "GitLab Continuous Integration",
+                "type": "technology"
+            }
+        ]
+    },
+    {
         "name": "Timers",
         "url": "http://timers.florius.com.ar/",
         "description": "A minimalist timer app, with a few key features necessary for TCG tournaments.",
@@ -69,66 +162,6 @@
             {
                 "name": "SSR",
                 "definition": "Server Side Rendering",
-                "type": "technology"
-            }
-        ]
-    },
-    {
-        "name": "password.cat",
-        "url": "https://password.cat/",
-        "description": "A whimsical app to generate passwords via a cat-keyboard-input entropy generation.",
-        "challenges": [
-            "Make it look appealing.",
-            "Fully comply with RFC8615 and GDPR."
-        ],
-        "source": "https://gitlab.com/jazcarate/password.cat",
-        "tags": [
-            {
-                "name": "HTML",
-                "type": "language"
-            },
-            {
-                "name": "GitLab CI",
-                "definition": "GitLab Continuous Integration",
-                "type": "technology"
-            }
-        ]
-    },
-    {
-        "name": "Marble-OS",
-        "url": "https://jazcarate.github.io/marble-os/",
-        "description": "A CLI to run distributed programs in sync, used mainly as an academic tool for testing.",
-        "challenges": [
-            "Providing a rich CLI usage and help menu.",
-            "Bootstrapping development environment with Nix",
-            "Parsing custom file format."
-        ],
-        "source": "https://github.com/jazcarate/marble-os#readme",
-        "tags": [
-            {
-                "name": "Haskell",
-                "type": "language"
-            },
-            {
-                "name": "Nix",
-                "type": "technology"
-            },
-            {
-                "name": "attoparsec",
-                "type": "framework"
-            },
-            {
-                "name": "transformers",
-                "definition": "functor and monad transformers",
-                "type": "framework"
-            },
-            {
-                "name": "microlens",
-                "type": "framework"
-            },
-            {
-                "name": "CLI",
-                "definition": "Command Line Interpreter",
                 "type": "technology"
             }
         ]
