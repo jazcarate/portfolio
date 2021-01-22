@@ -1,5 +1,81 @@
 [
     {
+        "name": "Cukbuk",
+        "url": "https://cukb.uk/#/r/",
+        "description": "A PWA to store recipes, share them and easily scale them.",
+        "challenges": [
+            "Be minimal, but useful.",
+            "Build a recipe DSL with timers, alternatives, steps, et al."
+        ],
+        "source": "https://github.com/jazcarate/cukbuk",
+        "tags": [
+            {
+                "name": "TypeScript",
+                "type": "language"
+            },
+            {
+                "name": "Svelte",
+                "type": "framework"
+            },
+            {
+                "name": "DSL",
+                "type": "technology"
+            }
+        ]
+    },
+    {
+        "name": "Apples and oranges",
+        "description": "A java library to  “tag” object and validate a number of things when operating with them.",
+        "challenges": [
+            "Extending JVM bytecode in runtime.",
+            "Provide a extensible, and robust semi-lattice framework to build tags."
+        ],
+        "source": "https://github.com/jazcarate/aao",
+        "tags": [
+            {
+                "name": "Kotlin",
+                "type": "language"
+            },
+            {
+                "name": "ByteBuddy",
+                "type": "framework"
+            },
+            {
+                "name": "Joined semilattice",
+                "type": "technology"
+            }
+        ]
+    },
+    {
+        "name": "Tryhard",
+        "description": "A TUI to provide insight in DotA's hero pick phase",
+        "challenges": [
+            "Responsive and quick UI in a terminal environment.",
+            "Plugin system to fetch OpenDota's information and evaluate it.",
+            "Deployment of Haskell's binaries cross-platform."
+        ],
+        "source": "https://github.com/jazcarate/tryhard",
+        "tags": [
+            {
+                "name": "Haskell",
+                "type": "language"
+            },
+            {
+                "name": "brick",
+                "type": "framework"
+            },
+            {
+                "name": "req",
+                "type": "framework"
+            },
+            {
+                "name": "OpenDota API",
+                "definition": "OpenDota's application programming interface",
+                "type": "technology"
+            }
+        ]
+    },
+    {
         "name": "koncierge",
         "url": "http://koncierge.florius.com.ar/",
         "description": "A Kotlin library to define AB experiments given a context.",
