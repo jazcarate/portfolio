@@ -13,11 +13,15 @@ const Thick = styled.footer`
 
 const Footer = () => {
     return (
-        <Link href="#deck">
-            <Thick>
-                Back to projects
+        <>
+            <span>Blog icon designed by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a></span>
+
+            <Link href="#deck">
+                <Thick>
+                    Back to projects
             </Thick>
-        </Link>
+            </Link>
+        </>
     );
 };
 

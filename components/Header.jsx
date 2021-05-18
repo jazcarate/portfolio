@@ -72,10 +72,10 @@ const connections = [
         title: "linkedIn",
         color: "#0077B5"
     }, {
-        url: "mailto:j@florius.com.ar",
-        icon: "https://simpleicons.org/icons/gmail.svg",
-        title: "E-Mail",
-        color: "#D14836"
+        url: "https://blog.florius.com.ar",
+        icon: "/blogging.svg",
+        title: "Personal Blog",
+        color: "palevioletred"
     },
 ];
 
