@@ -11,10 +11,14 @@ const Thick = styled.footer`
     text-align: right;
 `;
 
+const SubtleLink = styled.a`
+    color: inherit;
+`;
+
 const Footer = () => {
     return (
         <>
-            <span>Blog icon designed by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a href="https://www.flaticon.com/" title="Flaticon">flaticon.com</a></span>
+            <span>Blog icon designed by <SubtleLink href="https://www.freepik.com" title="Freepik">Freepik</SubtleLink> from <SubtleLink href="https://www.flaticon.com/" title="Flaticon">flaticon.com</SubtleLink></span>
 
             <Link href="#deck">
                 <Thick>
