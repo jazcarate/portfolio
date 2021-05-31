@@ -1,5 +1,82 @@
 [
     {
+        "name": "Rough Graph",
+        "url": "https://jazcarate.github.io/rough-graph",
+        "description": "For when you need a graph, but don't care about the specific values.",
+        "challenges": [
+            "Have enough flexibility to be useful, but not overwhelming.",
+            "Incorporate imperative Canvas code with React."
+        ],
+        "source": "https://github.com/jazcarate/rough-graph",
+        "tags": [
+            {
+                "name": "TypeScript",
+                "type": "language"
+            },
+            {
+                "name": "React",
+                "type": "framework"
+            },
+            {
+                "name": "Rough.js",
+                "type": "technology"
+            },
+            {
+                "name": "HTML Canvas",
+                "type": "technology"
+            }
+        ]
+    },
+    {
+        "name": "Blog",
+        "description": "My personal blog",
+        "url": "https://blog.florius.com.ar",
+        "challenges": [
+            "Have a simple setup, to code on the go.",
+            "Be adaptable for the range of topics I like to cover. Be there maths, programing, syntax highlighting, etc.",
+            "Have a good discoverability and SEO rating.",
+            "Find interesting things to write about"
+        ],
+        "source": "https://github.com/jazcarate/blog",
+        "tags": [
+            {
+                "name": "Ruby",
+                "type": "language"
+            },
+            {
+                "name": "Jekyll",
+                "type": "framework"
+            },
+            {
+                "name": "MathJax",
+                "type": "technology"
+            },
+            {
+                "name": "Blogging",
+                "type": "technology"
+            }
+        ]
+    },
+    {
+        "name": "Is Todays Announcement Going To Kill Magic? .com",
+        "description": "A friendly reminder to all Magic: The Gathering fans that today's announcement has not, in fact, killed the game",
+        "url": "https://istodaysannouncementgoingtokillmagic.com",
+        "challenges": [
+            "Be funny"
+        ],
+        "source": "https://github.com/jazcarate/istodaysannouncementgoingtokillmagic.com",
+        "tags": [
+            {
+                "name": "HTML",
+                "type": "language"
+            },
+            {
+                "name": "Rambling",
+                "type": "technology"
+            }
+        ]
+    },
+    {
         "name": "Cukbuk",
         "url": "https://cukb.uk/#/r/",
         "description": "A PWA to store recipes, share them and easily scale them.",
