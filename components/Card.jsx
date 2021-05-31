@@ -71,13 +71,14 @@ const Tag = styled.li`
 `;
 
 const Card = ({ name, tags }) => {
+    const safeName = encode(name);
     const [numFigures, setNumFigures] = useState(0);
     useEffect(() => {
         setNumFigures(1 + Math.floor(Math.random() * 3));
     }, []);
 
     return (<>
-        <CardStock href={`#${encode(name)}`}>
+        <CardStock href={`#${safeName}`} id={`back-${safeName}`}>
             {[...Array(numFigures).keys()].map(i => <RandomFig key={`figure-${name}-${i}`} />)}
             <Info>{name}</Info>
             <Footer>

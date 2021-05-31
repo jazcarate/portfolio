@@ -5,13 +5,11 @@ import ConditionalWrapper from './ConditionalWrapper';
 import Link from './Link';
 import encode from './nameEncode';
 
-const Preview = styled.img`
-    clip-path: circle(50% at center);
-    height: 3em;
-`;
-
-const Caption = styled.figcaption`
-    display: none;
+const ReturnLink = styled.a`
+    font-size: 0.6em;
+    color: inherit;
+    margin-left: 1em;
+    text-decoration: none;
 `;
 
 const Snaked = styled.div`
@@ -60,12 +58,14 @@ const InlineLi = styled.li`
 
 const Project = ({ name, url, source, description, tags, challenges }) => {
     const WithLink = (props) => <ConditionalWrapper condition={url} wrapper={children => <Link href={url}>{children}</Link>} {...props} />
+    const safeName = encode(name);
 
     return (<>
-        <Snaked id={encode(name)}>
+        <Snaked id={safeName}>
             <dt>
                 <h3>
                     <WithLink>{name}</WithLink>
+                    <ReturnLink href={`#back-${safeName}`}>↩</ReturnLink>
                 </h3>
             </dt>
             <dd>
