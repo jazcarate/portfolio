@@ -69,7 +69,7 @@ const connections = [
     }, {
         url: "https://www.linkedin.com/in/joaquin-azcarate/",
         icon: "https://simpleicons.org/icons/linkedin.svg",
-        title: "linkedIn",
+        title: "LinkedIn",
         color: "#0077B5"
     }, {
         url: "https://blog.florius.com.ar",
