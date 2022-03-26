@@ -226,7 +226,7 @@
     },
     {
         "name": "password.cat",
-        "url": "https://password.cat/",
+        "url": "https://jazcarate.gitlab.io/password.cat/",
         "description": "A whimsical app to generate passwords via a cat-keyboard-input entropy generation.",
         "challenges": [
             "Make it look appealing.",
