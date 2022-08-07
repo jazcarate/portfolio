@@ -69,12 +69,17 @@ const Project = ({ name, url, source, description, tags, challenges }) => {
                 </h3>
             </dt>
             <dd>
-                <p>{description}</p>
+                <p dangerouslySetInnerHTML={{ __html: description }}></p>
 
-                <h4>Challenge</h4>
-                {challenges.length == 1 ? <>{challenges[0]}</> : <ul>
-                    {challenges.map((challenge, i) => <li key={`challenge-${name}-${i}`}>{challenge}</li>)}
-                </ul>}
+                {challenges.length == 1 ? (<>
+                    <h4>Challenge</h4>
+                    {challenges[0]}
+                </>) : (<>
+                    <h4>Challenges</h4>
+                    <ul>
+                        {challenges.map((challenge, i) => <li key={`challenge-${name}-${i}`}>{challenge}</li>)}
+                    </ul>
+                </>)}
 
                 <h4>Link</h4>
                 <InlineLu>

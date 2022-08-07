@@ -67,7 +67,7 @@
                 "$id": "#/items/project/description",
                 "type": "string",
                 "title": "Description",
-                "description": "Description of the project.",
+                "description": "Description of the project (HTML is allowed).",
                 "examples": [
                     "A foo'sticle dependency."
                 ]

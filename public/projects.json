@@ -1,5 +1,29 @@
 [
     {
+        "name": "countable",
+        "url": "https://xn--e4h46a.florius.com.ar/",
+        "description": "<em>Arabic numerals</em> are so 9<sup>th</sup> century. I needed a way to convey numbers in a more modern way: With emojis ",
+        "challenges": [
+            "SSR via Cloudflare’s Workers framework-less.",
+            "Incorporate imperative Canvas code with React."
+        ],
+        "source": "https://github.com/jazcarate/countable",
+        "tags": [
+            {
+                "name": "JavaScript",
+                "type": "language"
+            },
+            {
+                "name": "Cloudflare’s Workers",
+                "type": "technology"
+            },
+            {
+                "name": "Punycode URL",
+                "type": "technology"
+            }
+        ]
+    },
+    {
         "name": "Rough Graph",
         "url": "https://jazcarate.github.io/rough-graph",
         "description": "For when you need a graph, but don't care about the specific values.",
