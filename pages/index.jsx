@@ -39,10 +39,6 @@ const Index = () => {
         <meta property="og:site_name" content="Joaquin Azcarate :: Personal Projects" />
 
         <script {...me} />
-
-        <link href="https://fonts.googleapis.com/css?family=Karla|Montserrat&display=swap" rel="stylesheet" />
-        <link rel="icon" href="/favicon.ico" />
-        <link id="style-root" rel="stylesheet" />
       </Head>
 
       <App />

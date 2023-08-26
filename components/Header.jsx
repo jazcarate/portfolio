@@ -23,7 +23,7 @@ const SocialIcon = styled.img`
     }
     
     animation: ${dropIn} cubic-bezier(0, 0, 0.1, 1) 1 1s forwards;
-    animation-delay: ${props => props.delay}ms;
+    animation-delay: ${props => props.$delay}ms;
     transform: translate3D(0, 3em, 0);
     opacity: 0;
 `
@@ -90,7 +90,7 @@ const Header = () => {
                     {connections.map(({ url, icon, title, color }, i) =>
                         <Connection key={`connection-${i}`}>
                             <a href={url} target="_blank" rel="noreferrer noopener" title={title}>
-                                <SocialIcon alt={title} src={icon} delay={100 + i * 130} color={color} />
+                                <SocialIcon alt={title} src={icon} $delay={100 + i * 130} color={color} />
                             </a>
                         </Connection>)}
                 </Connections>
