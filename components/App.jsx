@@ -5,8 +5,10 @@ import Header from './Header';
 import Project from './Project';
 import Cards from './Cards';
 import Footer from './Footer';
+import ProjectCard from './Card/Project';
+import VideoCard from './Card/Video';
 
-import projects from '../public/projects.json';
+import portfolio from '../public/portfolio.json';
 
 const Wrapper = styled.div`
     margin: 0 auto;
@@ -44,21 +46,27 @@ const App = () => {
         <>
             <Wrapper>
                 <Header />
-                <Hr />
 
+                <Hr />
+                <section id="videos">
+                    <h2>My videos</h2>
+                    <Cards list={portfolio.videos.items} Card={VideoCard} />
+                </section>
+
+                <Hr />
                 <section id="deck">
                     <h2>My projects</h2>
-                    <Cards projects={projects} />
+                    <Cards list={portfolio.projects} Card={ProjectCard} />
                 </section>
 
                 <Hr />
                 <section id="portfolio">
                     <h2>Details</h2>
                     <dl>
-                        {projects.map((p, i) => <Project {...p} key={`project-${i}`} />)}
+                        {portfolio.projects.map((p, i) => <Project {...p} key={`project-${i}`} />)}
                     </dl>
                 </section>
-                
+
                 <Footer />
             </Wrapper>
         </>

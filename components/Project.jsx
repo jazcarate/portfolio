@@ -58,7 +58,7 @@ const InlineLi = styled.li`
 
 const Project = ({ name, url, source, description, tags, challenges }) => {
     const WithLink = (props) => <ConditionalWrapper condition={url} wrapper={children => <Link href={url}>{children}</Link>} {...props} />
-    const safeName = encode(name);
+    const safeName = "project-" + encode(name);
 
     return (<>
         <Snaked id={safeName}>
