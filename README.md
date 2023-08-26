@@ -1,6 +1,7 @@
 # Florius.com.ar
+
 ## Personal portfolio
 
-
 ### Development
-`$ npm run dev`
+
+`$ npm run dev`.
