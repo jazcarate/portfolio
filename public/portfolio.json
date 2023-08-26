@@ -3,12 +3,12 @@
         "playlist": "PL53ya9oPAFEIUXJU52kdJ7x-UXGkuaRpx",
         "items": [
             {
-                "name": "From OOP to FP",
-                "slug": "rsJKMJqKSj0"
-            },
-            {
                 "name": "Reactive Java",
                 "slug": "MWVEhsGlgc8"
+            },
+            {
+                "name": "From OOP to FP",
+                "slug": "rsJKMJqKSj0"
             },
             {
                 "name": "Refactors a symposium on the desires of developers",
