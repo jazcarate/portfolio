@@ -4,36 +4,36 @@ import styled from 'styled-components';
 const TriangleBR = styled.div`
     clip-path: polygon(100% 100%, 100% 0%, 0% 100%);
     background: ${props => props.color};
-    grid-row: ${props => props.posY} / span ${props => props.sizeY};
-    grid-column: ${props => props.posX} / span ${props => props.sizeX};
+    grid-row: ${props => props.$posY} / span ${props => props.$sizeY};
+    grid-column: ${props => props.$posX} / span ${props => props.$sizeX};
 `;
 
 const TriangleTL = styled.div`
     clip-path: polygon(0% 100%, 100% 0%, 0% 0%);
     background: ${props => props.color};
-    grid-row: ${props => props.posY} / span ${props => props.sizeY};
-    grid-column: ${props => props.posX} / span ${props => props.sizeX};
+    grid-row: ${props => props.$posY} / span ${props => props.$sizeY};
+    grid-column: ${props => props.$posX} / span ${props => props.$sizeX};
 `;
 
 const TriangletR = styled.div`
     clip-path: polygon(100% 100%, 100% 0%, 0% 0%);
     background: ${props => props.color};
-    grid-row: ${props => props.posY} / span ${props => props.sizeY};
-    grid-column: ${props => props.posX} / span ${props => props.sizeX};
+    grid-row: ${props => props.$posY} / span ${props => props.$sizeY};
+    grid-column: ${props => props.$posX} / span ${props => props.$sizeX};
 `;
 
 const Dots = styled.div`
     background: radial-gradient(${props => props.color} 20%, transparent 19%), radial-gradient(black 20%, transparent 19%), transparent;
     background-size: 6px 6px;
     background-position: 0 0, 3px 3px;
-    grid-row: ${props => props.posY} / span ${props => props.sizeY};
-    grid-column: ${props => props.posX} / span ${props => props.sizeX};
+    grid-row: ${props => props.$posY} / span ${props => props.$sizeY};
+    grid-column: ${props => props.$posX} / span ${props => props.$sizeX};
 `;
 
 const Solid = styled.div`
     background: ${props => props.color};
-    grid-row: ${props => props.posY} / span ${props => props.sizeY};
-    grid-column: ${props => props.posX} / span ${props => props.sizeX};
+    grid-row: ${props => props.$posY} / span ${props => props.$sizeY};
+    grid-column: ${props => props.$posX} / span ${props => props.$sizeX};
 `;
 
 const possibleShapes = [
@@ -72,7 +72,7 @@ const RandomFig = () => {
 
     if (color && Figure && positions) {
         const [posX, sizeX, posY, sizeY] = positions;
-        return <Figure color={color} posY={posY} posX={posX} sizeY={sizeY} sizeX={sizeX} />
+        return <Figure color={color} $posY={posY} $posX={posX} $sizeY={sizeY} $sizeX={sizeX} />
     }
     return <></>;
 };
