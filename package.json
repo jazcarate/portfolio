@@ -8,23 +8,19 @@
     "dev": "next dev",
     "build": "next build"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+ssh://git@gitlab.com/jazcarate/portfolio.git"
-  },
   "keywords": [
     "next.js",
     "html",
     "portfolio"
   ],
   "author": "Florius",
-  "license": "MIT",
+  "license": "The Unlicense",
   "homepage": "https://florius.com.ar",
   "dependencies": {
-    "next": "13.4.19",
-    "react": "18.2.0",
-    "react-dom": "18.2.0",
+    "next": "^15.3.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
     "react-schemaorg": "2.0.0",
-    "styled-components": "6.0.7"
+    "styled-components": "^6.1.17"
   }
 }

@@ -58,22 +58,22 @@ const SubTitle = styled.p`
 const connections = [
     {
         url: "https://github.com/jazcarate",
-        icon: "https://simpleicons.org/icons/github.svg",
+        icon: "/icons/GitHub.svg",
         title: "GitHub",
         color: "#181717"
     }, {
         url: "https://gitlab.com/jazcarate",
-        icon: "https://simpleicons.org/icons/gitlab.svg",
+        icon: "/icons/GitLab.svg",
         title: "GitLab",
         color: "#FCA121"
     }, {
         url: "https://www.linkedin.com/in/joaquin-azcarate/",
-        icon: "https://simpleicons.org/icons/linkedin.svg",
+        icon: "/icons/LinkedIn.svg",
         title: "LinkedIn",
         color: "#0077B5"
     }, {
         url: "https://blog.florius.com.ar",
-        icon: "/blogging.svg",
+        icon: "/icons/Blog.svg",
         title: "Personal Blog",
         color: "palevioletred"
     },
