@@ -10,9 +10,7 @@ const dropIn = keyframes`
     100% { transform: translate3D(0, 0, 0);  opacity: 1; }
 `;
 
-const SocialIcon = styled.img`
-    height: 1.3em;
-    width: 1.3em;
+const SocialBlock = styled.span`
     border-bottom: 3px solid transparent;
     transition: border-color 300ms linear;
     padding: 6px;
@@ -26,6 +24,12 @@ const SocialIcon = styled.img`
     animation-delay: ${props => props.$delay}ms;
     transform: translate3D(0, 3em, 0);
     opacity: 0;
+`;
+
+const SocialIcon = styled.img`
+    height: 1.3em;
+    width: 1.3em;
+    vertical-align: middle;
 `
 
 const Connections = styled.ul`
@@ -36,6 +40,15 @@ const Connections = styled.ul`
 const Connection = styled.li`
     margin: 0 8px;
     display: inline;
+`;
+
+const ConnectionLink = styled.a`
+  text-decoration: none;
+  color: inherit;
+
+  &:visited {
+    color: inherit;
+  }
 `;
 
 const Wrapper = styled.header`
@@ -72,8 +85,13 @@ const connections = [
         title: "LinkedIn",
         color: "#0077B5"
     }, {
+        url: "/cv.htm",
+        text: "CV",
+        title: "Curriculum",
+        color: "palevioletred"
+    }, {
         url: "https://blog.florius.com.ar",
-        icon: "/icons/Blog.svg",
+        text: "Blog",
         title: "Personal Blog",
         color: "palevioletred"
     },
@@ -87,11 +105,13 @@ const Header = () => {
 
             <section id="connect">
                 <Connections>
-                    {connections.map(({ url, icon, title, color }, i) =>
+                    {connections.map(({ url, text, icon, title, color }, i) =>
                         <Connection key={`connection-${i}`}>
-                            <a href={url} target="_blank" rel="noreferrer noopener" title={title}>
-                                <SocialIcon alt={title} src={icon} $delay={100 + i * 130} color={color} />
-                            </a>
+                            <ConnectionLink href={url} target="_blank" rel="noreferrer noopener" title={title}>
+                                <SocialBlock alt={title} $delay={100 + i * 130} color={color}>
+                                    {text ? text : <SocialIcon src={icon} />}
+                                </SocialBlock>
+                            </ConnectionLink>
                         </Connection>)}
                 </Connections>
             </section>

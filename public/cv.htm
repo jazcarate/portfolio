@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Joaquin Azcarate - Software Engineer Resume</title>
+    <style>
+        body {
+            background-color: #f7f7f7;
+            color: #333;
+            font-family: system-ui, -apple-system, sans-serif;
+            margin: 0;
+            padding: 0;
+            line-height: 1.5;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 32px;
+            background-color: white;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 16px;
+            margin-bottom: 24px;
+        }
+
+        .name {
+            font-size: 2.25rem;
+            font-weight: bold;
+            background-image: linear-gradient(to left, palevioletred, #d53f8c);
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .contact-info {
+            font-size: 1.125rem;
+            color: #666;
+        }
+
+        .contact-info a {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.2s;
+        }
+
+        .contact-info a:hover {
+            color: #333;
+        }
+
+        .location {
+            text-align: right;
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        .section {
+            margin-bottom: 32px;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 600;
+            border-bottom: 1px solid #e5e5e5;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+
+        .job {
+            margin-bottom: 24px;
+        }
+
+        .job-title {
+            font-size: 1.125rem;
+            font-weight: bold;
+        }
+
+        .job-period {
+            font-size: 0.875rem;
+            color: #666;
+        }
+
+        .job-description {
+            list-style-type: disc;
+            padding-left: 20px;
+            margin-top: 8px;
+            font-size: 0.875rem;
+            color: #444;
+        }
+
+        .job-description li {
+            margin-bottom: 4px;
+        }
+
+        .tech-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 4px;
+            padding-left: 20px;
+            margin-top: 8px;
+        }
+
+        .tech-pill {
+            display: inline-block;
+            background-image: linear-gradient(to left, rgba(219, 112, 147, 0.2), rgba(219, 112, 147, 0.1));
+            border-radius: 4px;
+            padding: 2px 8px;
+            font-size: 0.75rem;
+            font-family: monospace;
+            color: #444;
+        }
+
+
+        .print-button {
+            display: flex;
+            justify-content: center;
+            margin-top: 32px;
+        }
+
+        .print-button button {
+            background-color: #3b82f6;
+            color: white;
+            font-weight: bold;
+            padding: 8px 16px;
+            border-radius: 4px;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .print-button button:hover {
+            background-color: #2563eb;
+        }
+
+
+        @media print {
+            body {
+                background-color: white;
+                font-size: 9pt;
+                line-height: 1.3;
+            }
+
+            .container {
+                margin: 0;
+                padding: 10px;
+                box-shadow: none;
+                max-width: 100%;
+            }
+
+            .no-print {
+                display: none !important;
+            }
+
+            .name {
+                color: black !important;
+                background-image: none !important;
+                background-clip: initial !important;
+                -webkit-background-clip: initial !important;
+                -webkit-text-fill-color: black !important;
+                font-size: 18pt;
+                margin-top: 0;
+                margin-bottom: 4px;
+            }
+
+            .contact-info {
+                font-size: 9pt;
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            .location p {
+                margin-top: 0;
+                margin-bottom: 0;
+            }
+
+            .tech-pill {
+                background-image: none !important;
+                background-color: transparent !important;
+                border: 1px solid #ddd !important;
+                font-size: 7pt;
+                padding: 0 4px;
+                margin: 2px;
+            }
+
+            .tech-container {
+                margin-top: 2px;
+                gap: 2px;
+            }
+
+            .section {
+                margin-bottom: 12px;
+            }
+
+            .section-title {
+                font-size: 12pt;
+                margin-bottom: 8px;
+                padding-bottom: 4px;
+            }
+
+            .job {
+                margin-bottom: 8px;
+                page-break-inside: avoid;
+            }
+
+            .job-title {
+                font-size: 10pt;
+                margin-bottom: 0;
+                margin-top: 0;
+            }
+
+            .job-period {
+                font-size: 8pt;
+                margin-top: 0;
+                margin-bottom: 2px;
+            }
+
+            .job-description {
+                margin-top: 2px;
+                margin-bottom: 2px;
+            }
+
+            .job-description li {
+                margin-bottom: 1px;
+            }
+
+            @page {
+                size: A4;
+                margin: 0.5cm;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="header">
+            <div>
+                <h1 class="name">Joaquin Azcarate</h1>
+                <p class="contact-info"><a href="mailto:j@florius.com.ar">j@florius.com.ar</a> | <a href="https://florius.com.ar/">florius.com.ar</a></p>
+            </div>
+            <div class="location">
+                <p>Barcelona, Spain</p>
+            </div>
+        </div>
+
+        <section class="section">
+            <h2 class="section-title">Work Experience</h2>
+
+            <div class="job">
+                <p class="job-title">King</p>
+                <p class="job-period">Sep 2022 - Present | Barcelona, Spain</p>
+                <ul class="job-description">
+                    <li>Working in the shared technology department. Building tools and a platform for game operations.
+                    </li>
+                    <li>Developed and maintained a custom Java framework, IAM solution, service discovery, service
+                        registry, and JSON-RPC clients and servers.</li>
+                    <li>Created plugins for build, publishing, and deployment processes.</li>
+                </ul>
+                <div class="tech-container">
+                    <span class="tech-pill">Java</span>
+                    <span class="tech-pill">Gradle</span>
+                    <span class="tech-pill">Google Cloud</span>
+                </div>
+            </div>
+
+            <div class="job">
+                <p class="job-title">Dynatrace</p>
+                <p class="job-period">Feb 2022 - Sep 2022 | Barcelona, Spain</p>
+                <ul class="job-description">
+                    <li>Worked on the visit storage team, handling secure, parallel, and efficient data processing.</li>
+                    <li>Spearheaded the migration to 3rd generation session storage.</li>
+                    <li>Triaged and solved complex concurrency errors in production.</li>
+                    <li>Developed and iterated an automated bot to check health metrics of internal testing pods.</li>
+                </ul>
+                <div class="tech-container">
+                    <span class="tech-pill">Java</span>
+                    <span class="tech-pill">ElasticSearch</span>
+                    <span class="tech-pill">Cassandra</span>
+                </div>
+            </div>
+
+            <div class="job">
+                <p class="job-title">Apiumhub</p>
+                <p class="job-period">Mar 2021 - Dec 2021 | Barcelona, Spain</p>
+                <ul class="job-description">
+                    <li>Worked with Mango, moving feature sets outside a monolithic architecture.</li>
+                    <li>Developed and rapidly iterated on a backend-for-frontend as a gateway for native mobile apps.
+                    </li>
+                </ul>
+                <div class="tech-container">
+                    <span class="tech-pill">Java</span>
+                    <span class="tech-pill">Spring</span>
+                    <span class="tech-pill">Jenkins</span>
+                </div>
+            </div>
+
+            <div class="job">
+                <p class="job-title">FREE NOW</p>
+                <p class="job-period">Mar 2020 - May 2021 | Barcelona, Spain</p>
+                <ul class="job-description">
+                    <li>Started at Kapten_ and supported the migration when acquired by FREE NOW.</li>
+                    <li>Prepared for the migration of drivers from Portugal, UK, and France to FREE NOW platform.</li>
+                    <li>Focused on exploration and experimentation to drive driver engagement.</li>
+                    <li>Worked with orchestrated microservices, complex roll-out strategies, feature flagging, and A/B
+                        segmentation.</li>
+                </ul>
+                <div class="tech-container">
+                    <span class="tech-pill">Java</span>
+                    <span class="tech-pill">Kotlin</span>
+                    <span class="tech-pill">NodeJS</span>
+                    <span class="tech-pill">Python</span>
+                    <span class="tech-pill">Spring</span>
+                    <span class="tech-pill">MongoDB</span>
+                </div>
+            </div>
+
+            <div class="job">
+                <p class="job-title">10Pines</p>
+                <p class="job-period">Apr 2015 - Mar 2020 | CABA, Argentina</p>
+                <ul class="job-description">
+                    <li>Team lead on the Slack integration for a San Francisco HR engagement company.</li>
+                    <li>Worked with many varied clients across multiple technologies and domains.</li>
+                </ul>
+                <div class="tech-container">
+                    <span class="tech-pill">Java</span>
+                    <span class="tech-pill">NodeJS</span>
+                    <span class="tech-pill">Spring</span>
+                    <span class="tech-pill">Angular</span>
+                    <span class="tech-pill">AWS Lambda</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="section">
+            <h2 class="section-title">Other Roles</h2>
+
+            <div class="job">
+                <p class="job-title">Magic: the Gathering Judge</p>
+                <p class="job-period">Sep 2016 - Present</p>
+                <ul class="job-description">
+                    <li>Developed skills in conflict management, active listening, and solution-driven approaches in
+                        high-stress environments.</li>
+                    <li>Focused on customer care, empathy, and logistics management during tournaments.</li>
+                    <li>Developed mentoring abilities, providing and receiving feedback, networking, and presentation
+                        skills.</li>
+                </ul>
+            </div>
+
+            <div class="job">
+                <p class="job-title">Teaching Assistant Professor - Operating Systems</p>
+                <p class="job-period">Jul 2013 - Oct 2018 | CABA, Argentina</p>
+                <ul class="job-description">
+                    <li>Developed quarterly assignments for the course.</li>
+                    <li>Developed a bespoke pedagogical programming language, with its parser and runtime.</li>
+                </ul>
+            </div>
+        </section>
+    </div>
+
+    <div class="print-button no-print">
+        <button onclick="window.print()">Print / Save as PDF</button>
+    </div>
+
+
+</body></html>
