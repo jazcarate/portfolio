@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charSet="utf-8" />
+    <meta httpEquiv="Content-Type" content="text/html; charset=UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#cccccc" />
+
+    <title>Florius</title>
+    <meta name="description" content="Joaquin Azcarate :: Personal Projects" />
+    <meta name="keywords" content="florius, portfolio, whoami" />
+    <meta name="author" content="Joaquin `Florius' Azcarate" />
+
+    <meta itemProp="name" content="Florius" />
+    <meta itemProp="description" content="Joaquin Azcarate :: Personal Projects" />
+    <meta itemProp="image" content="https://florius.com.ar/summary.png" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:site" content="@FloriusWasTaken" />
+    <meta name="twitter:title" content="Florius" />
+    <meta name="twitter:description" content="Joaquin Azcarate :: Personal Projects" />
+    <meta name="twitter:creator" content="@FloriusWasTaken" />
+    <meta name="twitter:image" content="https://florius.com.ar/summary.png" />
+    <meta name="twitter:image:alt" content="Joaquin Azcarate :: Personal Projects" />
+
+    <meta property="og:title" content="Florius" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://florius.com.ar/" />
+    <meta property="og:image" content="https://florius.com.ar/summary.png" />
+    <meta property="og:description" content="Joaquin Azcarate :: Personal Projects" />
+    <meta property="og:site_name" content="Joaquin Azcarate :: Personal Projects" />
+
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "Person",
+            "name": "Joaquin Azcarate",
+            "jobTitle": "Software Developer",
+            "knowsLanguage": [
+                {
+                    "@type": "Language",
+                    "name": "Spanish",
+                    "alternateName": "es"
+                },
+                {
+                    "@type": "Language",
+                    "name": "English",
+                    "alternateName": "en"
+                }
+            ]
+        }
+    </script>
+
+    <link rel="icon" href="/favicon.ico">
+    <style>
+        html {
+            scroll-behavior: smooth;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Karla", sans-serif;
+            background-color: #f5f5f5;
+            padding: 0 10px;
+            line-height: 1.6;
+            font-size: 18px;
+            color: #444;
+        }
+
+        h1,
+        h2,
+        h3 {
+            line-height: 1.2;
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .wrapper {
+            margin: 0 auto;
+            width: 70%;
+            max-width: 1200px;
+        }
+
+        @media (max-width: 915px) {
+            .wrapper {
+                width: 100%;
+                padding: 0 20px;
+            }
+        }
+
+        header {
+            hr {
+                overflow: visible;
+                height: 30px;
+                border-style: solid;
+                border-color: black;
+                border-width: 1px 0 0 0;
+                border-radius: 20px;
+                margin-top: 2em;
+                width: 85%;
+
+                &:before {
+                    display: block;
+                    content: "";
+                    height: 30px;
+                    margin-top: -31px;
+                    border-style: solid;
+                    border-color: black;
+                    border-width: 0 0 1px 0;
+                    border-radius: 20px;
+                }
+            }
+
+
+            .highlight {
+                color: palevioletred;
+            }
+
+            .subtitle {
+                font-size: 1.5em;
+                font-weight: bold;
+            }
+
+            #connect {
+                ul {
+                    list-style: none;
+                }
+
+                li {
+                    display: inline;
+                }
+
+                a {
+                    text-decoration: none;
+                    color: inherit;
+
+                    &:visited {
+                        color: inherit;
+                    }
+                }
+
+                img {
+                    height: 1.3em;
+                    width: 1.3em;
+                    vertical-align: middle;
+                }
+
+                .animated {
+                    border-bottom: 3px solid transparent;
+                    transition: border-color 300ms linear;
+                    padding: 6px;
+                    border-radius: 5px;
+                    animation: 1s cubic-bezier(0, 0, 0.1, 1) 100ms forwards dropIn;
+                    transform: translate3d(0px, 3em, 0px);
+                    opacity: 0;
+
+                    &:hover {
+                        color: var(--hover-color);
+                    }
+                }
+
+            }
+        }
+
+
+        @keyframes eCbdropInPpY {
+            0% {
+                transform: translate3D(0, 3em, 0);
+                opacity: 0;
+            }
+
+            100% {
+                transform: translate3D(0, 0, 0);
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="wrapper">
+        <header>
+            <h1>I'm <span class="highlight">Joaquin Azcarate</span></h1>
+            <p class="subtitle">Software engineer.</p>
+
+            <section id="connect">
+                <ul>
+                    {{range $Index, $Connection := .Portfolio.Connections}}
+                    <li>
+                        <a href="{{.URL}}" target="_blank" rel="noreferrer noopener" title="{{.Name}}"
+                            class="connection-link">
+                            <span class="animated"
+                                style="animation-delay: {{(animationDelay $Index)}}ms; --hover-color: {{.Color}}">}
+                                {{if .Image}}
+                                <img src="{{.Image}}" alt="GitHub" class="social-icon">
+                                {{else}}
+                                {{.Name}}
+                                {{end}}
+                            </span>
+                        </a>
+                    </li>
+                    {{end}}
+                </ul>
+            </section>
+        </header>
+
+        <hr>
+        <section id="videos">
+            <h2>My videos</h2>
+            <div class="cards-grid">
+                {{range .Portfolio.Videos.Items}}
+                <a href="http://www.youtube.com/watch?v={{.Slug}}&list={{$.Portfolio.Videos.Playlist}}" target="_blank"
+                    rel="noopener noreferrer" class="card video-card"
+                    style="background-image: url(http://img.youtube.com/vi/{{.Slug}}/hqdefault.jpg)" title="{{.Name}}">
+                </a>
+                {{end}}
+            </div>
+        </section>
+
+        <hr>
+        <section id="deck">
+            <h2>My projects</h2>
+            <div class="cards-grid">
+                {{range .Portfolio.Projects}}
+                <a href="#{{.Name | projectID}}" class="card project-card">
+                    <div class="project-name">{{.Name}}</div>
+                    <div class="tags">
+                        {{range .Tags}}
+                        <span class="tag">{{.Name}}</span>
+                        {{end}}
+                    </div>
+                </a>
+                {{end}}
+            </div>
+        </section>
+
+        <hr>
+        <section id="portfolio">
+            <h2>Details</h2>
+            <dl class="project-details">
+                {{range .Portfolio.Projects}}
+                <dt id="{{.Name | projectID}}">{{.Name}}</dt>
+                <dd>
+                    {{if .Description}}<p>{{.Description | safeHTML}}</p>{{end}}
+
+                    {{if .URL}}
+                    <p><a href="{{.URL}}" target="_blank" rel="noreferrer noopener">Visit project</a></p>
+                    {{end}}
+
+                    {{if .Source}}
+                    <p><a href="{{.Source}}" target="_blank" rel="noreferrer noopener">Source code</a></p>
+                    {{end}}
+
+                    {{if .Challenges}}
+                    <p><strong>Challenges:</strong></p>
+                    <ul class="challenges">
+                        {{range .Challenges}}
+                        <li>{{.}}</li>
+                        {{end}}
+                    </ul>
+                    {{end}}
+
+                    {{if .Tags}}
+                    <p><strong>Technologies:</strong>
+                        {{range $index, $tag := .Tags}}
+                        {{if $index}}, {{end}}
+                        {{$tag.Name}}
+                        {{end}}
+                    </p>
+                    {{end}}
+                </dd>
+                {{end}}
+            </dl>
+        </section>
+
+        <footer>
+            <p>Built with ❤️</p>
+            <div class="footer-links">
+                <a href="https://github.com/jazcarate" target="_blank" rel="noreferrer noopener">GitHub</a>
+                <a href="https://gitlab.com/jazcarate" target="_blank" rel="noreferrer noopener">GitLab</a>
+                <a href="https://blog.florius.com.ar" target="_blank" rel="noreferrer noopener">Blog</a>
+            </div>
+        </footer>
+    </div>
+</body>
+
+</html>

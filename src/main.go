@@ -1,0 +1,202 @@
+package main
+
+import (
+	"encoding/json"
+	"fmt"
+	"html/template"
+	"io/fs"
+	"log"
+	"os"
+	"path/filepath"
+	"strings"
+)
+
+// Portfolio represents the structure of portfolio.json
+type Portfolio struct {
+	Connections []Connection `json:"connections"`
+	Videos      Videos       `json:"videos"`
+	Projects    []Project    `json:"projects"`
+}
+
+type Connection struct {
+	Name  string `json:"name"`
+	URL   string `json:"url"`
+	Image string `json:"image,omitempty"`
+	Color string `json:"color,omitempty"`
+}
+
+type Videos struct {
+	Playlist string  `json:"playlist"`
+	Items    []Video `json:"items"`
+}
+
+type Video struct {
+	Name string `json:"name"`
+	Slug string `json:"slug"`
+}
+
+type Project struct {
+	Name        string   `json:"name"`
+	URL         string   `json:"url,omitempty"`
+	Description string   `json:"description,omitempty"`
+	Challenges  []string `json:"challenges,omitempty"`
+	Source      string   `json:"source,omitempty"`
+	Tags        []Tag    `json:"tags,omitempty"`
+}
+
+type Tag struct {
+	Name string `json:"name"`
+	Type string `json:"type"`
+}
+
+// TemplateData holds the data passed to the template
+type TemplateData struct {
+	Portfolio Portfolio
+}
+
+func main() {
+	if err := buildPortfolio(); err != nil {
+		log.Fatalf("Error: %v", err)
+	}
+	fmt.Println("Build completed successfully")
+}
+
+func buildPortfolio() error {
+	fmt.Println("Loading portfolio data...")
+	portfolio, err := loadPortfolio()
+	if err != nil {
+		return fmt.Errorf("failed to load portfolio: %w", err)
+	}
+
+	fmt.Println("Loading template...")
+	tmpl, err := loadTemplate()
+	if err != nil {
+		return fmt.Errorf("failed to load template: %w", err)
+	}
+
+	fmt.Println("Generating HTML...")
+	htmlContent, err := generateHTML(tmpl, portfolio)
+	if err != nil {
+		return fmt.Errorf("failed to generate HTML: %w", err)
+	}
+
+	if err := os.RemoveAll("dist"); err != nil {
+		return fmt.Errorf("failed to delete `dist' directory: %w", err)
+	}
+
+	if err := os.MkdirAll("dist", 0755); err != nil {
+		return fmt.Errorf("failed to create `dist' directory: %w", err)
+	}
+
+	outputFile := "dist/index.html"
+	if err := os.WriteFile(outputFile, []byte(htmlContent), 0644); err != nil {
+		return fmt.Errorf("failed to write HTML file: %w", err)
+	}
+	fmt.Printf("Successfully generated %s\n", outputFile)
+
+	fmt.Println("Copying static assets...")
+	if err := copyStaticAssets(); err != nil {
+		return fmt.Errorf("failed to copy static assets: %w", err)
+	}
+	fmt.Println("Static assets copied successfully")
+
+	return nil
+}
+
+func loadPortfolio() (Portfolio, error) {
+	data, err := os.ReadFile("src/portfolio.json")
+	if err != nil {
+		return Portfolio{}, err
+	}
+
+	var portfolio Portfolio
+	if err := json.Unmarshal(data, &portfolio); err != nil {
+		return Portfolio{}, err
+	}
+
+	return portfolio, nil
+}
+
+func loadTemplate() (*template.Template, error) {
+	// Read the template file
+	tmplContent, err := os.ReadFile("src/template.html")
+	if err != nil {
+		return nil, err
+	}
+
+	tmpl, err := template.New("portfolio").Funcs(template.FuncMap{
+		"safeHTML": func(s string) template.HTML {
+			return template.HTML(s)
+		},
+		"projectID": func(name string) string {
+			id := strings.ToLower(name)
+			id = strings.ReplaceAll(id, " ", "-")
+			id = strings.ReplaceAll(id, ".", "")
+			return id
+		},
+		"animationDelay": func(index int) int {
+			return 100 + 130*index
+		},
+		"or": func(a, b string) string {
+			if a != "" {
+				return a
+			}
+			return b
+		},
+	}).Parse(string(tmplContent))
+	if err != nil {
+		return nil, err
+	}
+
+	return tmpl, nil
+}
+
+func generateHTML(tmpl *template.Template, portfolio Portfolio) (string, error) {
+	data := TemplateData{
+		Portfolio: portfolio,
+	}
+
+	var buf strings.Builder
+	if err := tmpl.Execute(&buf, data); err != nil {
+		return "", err
+	}
+
+	// TODO: minify
+
+	return buf.String(), nil
+}
+
+func copyStaticAssets() error {
+	return filepath.WalkDir("static", func(path string, d fs.DirEntry, err error) error {
+		if err != nil {
+			return err
+		}
+
+		relPath, err := filepath.Rel("static", path)
+		if err != nil {
+			return err
+		}
+
+		destPath := filepath.Join("dist", relPath)
+
+		if d.IsDir() {
+			return os.MkdirAll(destPath, 0755)
+		} else {
+			return copyFile(path, destPath)
+		}
+	})
+}
+
+func copyFile(src, dst string) error {
+	dstDir := filepath.Dir(dst)
+	if err := os.MkdirAll(dstDir, 0755); err != nil {
+		return err
+	}
+
+	srcData, err := os.ReadFile(src)
+	if err != nil {
+		return err
+	}
+
+	return os.WriteFile(dst, srcData, 0644)
+}
