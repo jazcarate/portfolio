@@ -11,8 +11,5 @@ Hosted on GitHub Pages
 This is a simple static HTML portfolio generated from a JSON schema using a Go templating system.
 
 ```bash
-go run src/dev.go
+go run src/main.go
 ```
-
-TODO: Minify
-TODO: Less strucutre (YAML)

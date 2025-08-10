@@ -11,49 +11,6 @@ import (
 	"strings"
 )
 
-// Portfolio represents the structure of portfolio.json
-type Portfolio struct {
-	Connections []Connection `json:"connections"`
-	Videos      Videos       `json:"videos"`
-	Projects    []Project    `json:"projects"`
-}
-
-type Connection struct {
-	Name  string `json:"name"`
-	URL   string `json:"url"`
-	Image string `json:"image,omitempty"`
-	Color string `json:"color,omitempty"`
-}
-
-type Videos struct {
-	Playlist string  `json:"playlist"`
-	Items    []Video `json:"items"`
-}
-
-type Video struct {
-	Name string `json:"name"`
-	Slug string `json:"slug"`
-}
-
-type Project struct {
-	Name        string   `json:"name"`
-	URL         string   `json:"url,omitempty"`
-	Description string   `json:"description,omitempty"`
-	Challenges  []string `json:"challenges,omitempty"`
-	Source      string   `json:"source,omitempty"`
-	Tags        []Tag    `json:"tags,omitempty"`
-}
-
-type Tag struct {
-	Name string `json:"name"`
-	Type string `json:"type"`
-}
-
-// TemplateData holds the data passed to the template
-type TemplateData struct {
-	Portfolio Portfolio
-}
-
 func main() {
 	if err := buildPortfolio(); err != nil {
 		log.Fatalf("Error: %v", err)
@@ -103,15 +60,15 @@ func buildPortfolio() error {
 	return nil
 }
 
-func loadPortfolio() (Portfolio, error) {
+func loadPortfolio() (any, error) {
 	data, err := os.ReadFile("src/portfolio.json")
 	if err != nil {
-		return Portfolio{}, err
+		return nil, err
 	}
 
-	var portfolio Portfolio
+	var portfolio any
 	if err := json.Unmarshal(data, &portfolio); err != nil {
-		return Portfolio{}, err
+		return nil, err
 	}
 
 	return portfolio, nil
@@ -135,13 +92,7 @@ func loadTemplate() (*template.Template, error) {
 			return id
 		},
 		"animationDelay": func(index int) int {
-			return 100 + 130*index
-		},
-		"or": func(a, b string) string {
-			if a != "" {
-				return a
-			}
-			return b
+			return 500 + 130*index
 		},
 	}).Parse(string(tmplContent))
 	if err != nil {
@@ -151,13 +102,9 @@ func loadTemplate() (*template.Template, error) {
 	return tmpl, nil
 }
 
-func generateHTML(tmpl *template.Template, portfolio Portfolio) (string, error) {
-	data := TemplateData{
-		Portfolio: portfolio,
-	}
-
+func generateHTML(tmpl *template.Template, portfolio any) (string, error) {
 	var buf strings.Builder
-	if err := tmpl.Execute(&buf, data); err != nil {
+	if err := tmpl.Execute(&buf, portfolio); err != nil {
 		return "", err
 	}
 
