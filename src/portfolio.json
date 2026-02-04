@@ -664,7 +664,7 @@
         "Making it somewhat pretty.",
         "Simple build and compile, with minimal dependencies."
       ],
-      "source": "https://gitlab.com/jazcarate/portfolio",
+      "source": "https://github.com/jazcarate/portfolio",
       "tags": [
         {
           "name": "Go",
