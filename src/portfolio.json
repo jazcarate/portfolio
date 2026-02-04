@@ -43,9 +43,33 @@
   },
   "projects": [
     {
+      "name": "Fellowship Log Analyzer",
+      "url": "https://fellowship.flori.us/",
+      "description": "Parse and review Fellowship game logs. Missed interrupts? Taken too much avoidable damage? Use the analyzer to improve your dungeon experience.",
+      "challenges": [
+        "Product design to help people improve, but not being toxic.",
+        "Parse millions of logs to extract meaningful data, in the browser."
+      ],
+      "source": "https://github.com/jazcarate/fellowship-analyzer",
+      "tags": [
+        {
+          "name": "TypeScript",
+          "type": "language"
+        },
+        {
+          "name": "React",
+          "type": "framework"
+        },
+        {
+          "name": "Fellowship Log format",
+          "type": "technology"
+        }
+      ]
+    },
+    {
       "name": "countable",
       "url": "https://xn--e4h46a.florius.com.ar/",
-      "description": "<em>Arabic numerals</em> are so 9<sup>th</sup> century. I needed a way to convey numbers in a more modern way: With emojis ",
+      "description": "<em>Arabic numerals</em> are so 9<sup>th</sup> century. I needed a way to convey numbers in a more modern way: With emojis ☝️✌️",
       "challenges": [
         "SSR via Cloudflare’s Workers framework-less.",
         "Incorporate imperative Canvas code with React."
